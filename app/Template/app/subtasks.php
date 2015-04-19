@@ -1,6 +1,6 @@
-<h2><?= t('My subtasks') ?></h2>
+<h3 class="p-title"><?= t('My subtasks') ?></h3>
 <?php if ($paginator->isEmpty()): ?>
-    <p class="alert"><?= t('There is nothing assigned to you.') ?></p>
+    <div data-alert class="alert-box info"><?= t('There is nothing assigned to you.') ?></div>
 <?php else: ?>
     <table class="table-fixed">
         <tr>

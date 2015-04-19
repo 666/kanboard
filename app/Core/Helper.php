@@ -104,6 +104,17 @@ class Helper
     }
 
     /**
+     * Return the user email address
+     *
+     * @param  array    $user   User properties
+     * @return string
+     */
+    public function getEmail(array $user = array())
+    {
+        return $this->user->getEmail(empty($user) ? $_SESSION['user'] : $user);
+    }
+
+    /**
      * HTML escaping
      *
      * @param  string   $value    Value to escape
@@ -779,10 +790,12 @@ class Helper
      * @param  string  $alt
      * @return string
      */
-    public function avatar($email, $alt = '')
+    public function avatar($email, $alt = '', $size = 25)
     {
         if (! empty($email) && $this->config->get('integration_gravatar') == 1) {
-            return '<img class="avatar" src="https://www.gravatar.com/avatar/'.md5(strtolower($email)).'?s=25" alt="'.$this->e($alt).'" title="'.$this->e($alt).'">';
+            return '<img class="avatar" src="https://www.gravatar.com/avatar/'.md5(strtolower($email)).'?s='.$size.'" alt="'.$this->e($alt).'" title="'.$this->e($alt).'">';
+        } else {
+            return '<img class="avatar" src="https://www.gravatar.com/avatar/00000000000000000000000000000000?s='.$size.'" alt="'.$this->e($alt).'" title="'.$this->e($alt).'">';
         }
 
         return '';

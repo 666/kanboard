@@ -1,5 +1,5 @@
 <section id="main">
-    <p class="alert alert-error">
+    <div data-alert class="alert-box warning">
         <?= t('Sorry, I didn\'t find this information in my database!') ?>
-    </p>
+    </div>
 </section>

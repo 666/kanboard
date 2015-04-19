@@ -1,5 +1,5 @@
 <section id="main">
-    <p class="alert alert-error">
+    <div data-alert class="alert-box alert">
         <?= t('Access Forbidden') ?>
-    </p>
+    </div>
 </section>
