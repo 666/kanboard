@@ -1,6 +1,6 @@
-<div class="sidebar">
-    <h2><?= t('Actions') ?></h2>
-    <ul>
+<div class="sidebar columns medium-3">
+    <h3><?= t('Actions') ?></h3>
+    <ul class="side-nav">
         <li>
             <?= $this->a(t('Summary'), 'project', 'show', array('project_id' => $project['id'])) ?>
         </li>
@@ -54,8 +54,8 @@
     </ul>
 
     <?php if ($this->acl->isManagerActionAllowed($project['id'])): ?>
-    <h2><?= t('Exports') ?></h2>
-    <ul>
+    <h3><?= t('Exports') ?></h3>
+    <ul class="side-nav">
         <li>
             <?= $this->a(t('Tasks'), 'export', 'tasks', array('project_id' => $project['id'])) ?>
         </li>

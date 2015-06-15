@@ -1,21 +1,17 @@
 <section id="main">
     <div class="page-header">
-        <ul>
+        <ul class="button-group medium-10 medium-offset-1 medium-text-center">
             <li>
-                <i class="fa fa-table fa-fw"></i>
-                <?= $this->a(t('Back to the board'), 'board', 'show', array('project_id' => $project['id'])) ?>
+                <?= $this->a('<i class="fa fa-table fa-fw"></i> '.t('Back to the board'), 'board', 'show', array('project_id' => $project['id']), false, "button success") ?>
             </li>
             <li>
-                <i class="fa fa-calendar fa-fw"></i>
-                <?= $this->a(t('Calendar'), 'calendar', 'show', array('project_id' => $project['id'])) ?>
+                <?= $this->a('<i class="fa fa-calendar fa-fw"></i> '.t('Calendar'), 'calendar', 'show', array('project_id' => $project['id']), false, "button success") ?>
             </li>
             <li>
-                <i class="fa fa-search fa-fw"></i>
-                <?= $this->a(t('Search'), 'project', 'search', array('project_id' => $project['id'])) ?>
+                <?= $this->a('<i class="fa fa-search fa-fw"></i> '.t('Search'), 'project', 'search', array('project_id' => $project['id']), false, "button success") ?>
             </li>
             <li>
-                <i class="fa fa-dashboard fa-fw"></i>
-                <?= $this->a(t('Activity'), 'project', 'activity', array('project_id' => $project['id'])) ?>
+                <?= $this->a('<i class="fa fa-dashboard fa-fw"></i> '.t('Activity'), 'project', 'activity', array('project_id' => $project['id']), false, "button success") ?>
             </li>
         </ul>
     </div>

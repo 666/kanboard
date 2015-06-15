@@ -55,13 +55,18 @@
             </li>
 
             <?php if (isset($board_selector) && ! empty($board_selector)): ?>
-            <li><label>Projects</label></li>
-            <li><input type="text" placeholder="Search"></li>
+            <div id="projects">
 
-            <?php foreach($board_selector as $board_id => $board_name): ?>
-            <li><a href="#"><?= $this->e($board_name) ?></a></li>
-            <?php endforeach ?>
+              <li><label>Projects</label></li>
+              <li><input type="text" class="search" placeholder="Search"></li>
 
+              <div class="list">
+                <?php foreach($board_selector as $board_id => $board_name): ?>
+                <li><?= $this->a($this->e($board_name), 'board', 'show', array("project_id" => $board_id), false, "projeto") ?></li>
+                <?php endforeach ?>
+              </div>
+
+            </div>
             <?php endif ?>
 
             <li><?= $this->a('<i class="fa fa-file"></i> '.t('Project management'), 'project', 'index') ?>

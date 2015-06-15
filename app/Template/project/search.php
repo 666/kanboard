@@ -1,21 +1,17 @@
 <section id="main">
     <div class="page-header">
-        <ul>
+        <ul class="button-group medium-10 medium-offset-1 medium-text-center">
             <li>
-                <i class="fa fa-table fa-fw"></i>
-                <?= $this->a(t('Back to the board'), 'board', 'show', array('project_id' => $project['id'])) ?>
+                <?= $this->a('<i class="fa fa-table fa-fw"></i> '.t('Back to the board'), 'board', 'show', array('project_id' => $project['id']), false, "button success") ?>
             </li>
             <li>
-                <i class="fa fa-calendar fa-fw"></i>
-                <?= $this->a(t('Calendar'), 'calendar', 'show', array('project_id' => $project['id'])) ?>
+                <?= $this->a('<i class="fa fa-calendar fa-fw"></i> '.t('Calendar'), 'calendar', 'show', array('project_id' => $project['id']), false, "button success") ?>
             </li>
             <li>
-                <i class="fa fa-check-square-o fa-fw"></i>
-                <?= $this->a(t('Completed tasks'), 'project', 'tasks', array('project_id' => $project['id'])) ?>
+                <?= $this->a('<i class="fa fa-check-square-o fa-fw"></i> '.t('Completed tasks'), 'project', 'tasks', array('project_id' => $project['id']), false, "button success") ?>
             </li>
             <li>
-                <i class="fa fa-dashboard fa-fw"></i>
-                <?= $this->a(t('Activity'), 'project', 'activity', array('project_id' => $project['id'])) ?>
+                <?= $this->a('<i class="fa fa-dashboard fa-fw"></i> '.t('Activity'), 'project', 'activity', array('project_id' => $project['id']), false, "button success") ?>
             </li>
         </ul>
     </div>
@@ -25,11 +21,11 @@
         <?= $this->formHidden('action', $values) ?>
         <?= $this->formHidden('project_id', $values) ?>
         <?= $this->formText('search', $values, array(), array('autofocus', 'required', 'placeholder="'.t('Search').'"'), 'form-input-large') ?>
-        <input type="submit" value="<?= t('Search') ?>" class="btn btn-blue"/>
+        <input type="submit" value="<?= t('Search') ?>" class="button success"/>
     </form>
 
     <?php if (! empty($values['search']) && $paginator->isEmpty()): ?>
-        <p class="alert"><?= t('Nothing found.') ?></p>
+        <div data-alert class="alert-box secondary"><?= t('Nothing found.') ?></div>
     <?php elseif (! $paginator->isEmpty()): ?>
         <?= $this->render('task/table', array(
             'paginator' => $paginator,
